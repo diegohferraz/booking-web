@@ -1,84 +1,15 @@
 import Header from './Header'
+import StaysList from './StaysList'
 
 function App() {
   return (
-    <div className="flex min-h-screen flex-col bg-slate-200 text-defaultText">
+    <div className="flex min-h-screen flex-col bg-slate-100 text-defaultText">
       <Header />
-      <main className="flex-grow">
-        <ul>
-          <li>
-            <div>
-              <div>
-                <img src="https://place-hold.it/300x300" />
-              </div>
-              <div>
-                <h3>Cabin on the woods</h3>
-                <p>Itaim bibi, São Paulo</p>
-                <p>R$ 200,00 por noite</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div>
-                <img src="https://place-hold.it/300x300" />
-              </div>
-              <div>
-                <h3>Cabin on the woods</h3>
-                <p>Itaim bibi, São Paulo</p>
-                <p>R$ 200,00 por noite</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div>
-                <img src="https://place-hold.it/300x300" />
-              </div>
-              <div>
-                <h3>Cabin on the woods</h3>
-                <p>Itaim bibi, São Paulo</p>
-                <p>R$ 200,00 por noite</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div>
-                <img src="https://place-hold.it/300x300" />
-              </div>
-              <div>
-                <h3>Cabin on the woods</h3>
-                <p>Itaim bibi, São Paulo</p>
-                <p>R$ 200,00 por noite</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div>
-                <img src="https://place-hold.it/300x300" />
-              </div>
-              <div>
-                <h3>Cabin on the woods</h3>
-                <p>Itaim bibi, São Paulo</p>
-                <p>R$ 200,00 por noite</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div>
-                <img src="https://place-hold.it/300x300" />
-              </div>
-              <div>
-                <h3>Cabin on the woods</h3>
-                <p>Itaim bibi, São Paulo</p>
-                <p>R$ 200,00 por noite</p>
-              </div>
-            </div>
-          </li>
-        </ul>
+      <main className="mx-auto w-full max-w-7xl grow p-6">
+        <h2 className="mb-8 text-5xl font-medium text-secondary max-sm:text-4xl">
+          Stays near you
+        </h2>
+        <StaysList />
       </main>
 
       <footer>

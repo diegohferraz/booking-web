@@ -15,7 +15,7 @@ const Header = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false)
 
   return (
-    <header className="sticky top-0 flex justify-between border-b bg-white p-3 align-middle shadow-sm">
+    <header className="sticky top-0 z-20 flex justify-between border-b bg-white p-3 align-middle shadow-sm">
       <div className="grow">
         <a href="/">
           <img alt="Hostifully" src="/logo.svg" className="w-[134px]" />
