@@ -34,10 +34,10 @@ function Calendar({
         head_cell:
           'text-gray-500 rounded-md w-9 font-normal text-[0.8rem] dark:text-gray-400',
         row: 'flex w-full mt-2',
-        cell: 'size-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-gray-100/50 [&:has([aria-selected])]:bg-gray-100 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20 dark:[&:has([aria-selected].day-outside)]:bg-gray-800/50 dark:[&:has([aria-selected])]:bg-gray-800',
+        cell: 'h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-gray-100/50 [&:has([aria-selected])]:bg-gray-100 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20 dark:[&:has([aria-selected].day-outside)]:bg-gray-800/50 dark:[&:has([aria-selected])]:bg-gray-800',
         day: cn(
           buttonVariants({ variant: 'ghost' }),
-          'size-9 p-0 font-normal aria-selected:opacity-100'
+          'h-9 w-9 p-0 font-normal aria-selected:opacity-100'
         ),
         day_range_end: 'day-range-end',
         day_selected:
@@ -53,8 +53,8 @@ function Calendar({
         ...classNames
       }}
       components={{
-        IconLeft: () => <ChevronLeft className="size-4" />,
-        IconRight: () => <ChevronRight className="size-4" />
+        IconLeft: () => <ChevronLeft className="h-4 w-4" />,
+        IconRight: () => <ChevronRight className="h-4 w-4" />
       }}
       {...props}
     />
