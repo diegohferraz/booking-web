@@ -1,4 +1,4 @@
-import BookingsList from 'components/BookingsList'
+import BookingsList from '@/components/BookingsList'
 
 const MyBookings = () => (
   <main className="mx-auto w-full max-w-7xl grow p-6">

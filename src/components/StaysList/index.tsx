@@ -8,9 +8,10 @@ type StaysListProps = {
     image: string
     price: number
   }[]
+  onBookStay: (stayId: number) => void
 }
 
-const StaysList = ({ stays }: StaysListProps) => (
+const StaysList = ({ stays, onBookStay }: StaysListProps) => (
   <ul className="grid grid-cols-3 gap-x-6 gap-y-10 max-lg:grid-cols-2 max-sm:grid-cols-1">
     {stays.map((stay) => (
       <StaysItem
@@ -19,6 +20,7 @@ const StaysList = ({ stays }: StaysListProps) => (
         address={stay.address}
         image={stay.image}
         price={stay.price}
+        onBookStay={() => onBookStay(stay.id)}
       />
     ))}
   </ul>

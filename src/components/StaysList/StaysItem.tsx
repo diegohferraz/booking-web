@@ -3,11 +3,18 @@ type StaysItemProps = {
   address: string
   image: string
   price: number
+  onBookStay: () => void
 }
 
-const StaysItem = ({ name, address, image, price }: StaysItemProps) => (
+const StaysItem = ({
+  name,
+  address,
+  image,
+  price,
+  onBookStay
+}: StaysItemProps) => (
   <li>
-    <a href="/" className="group">
+    <div className="group">
       <div className="mb-3 h-72 w-full overflow-hidden rounded">
         <img
           className="size-full object-cover transition-transform group-hover:scale-110"
@@ -26,11 +33,14 @@ const StaysItem = ({ name, address, image, price }: StaysItemProps) => (
           </b>{' '}
           per night
         </p>
-        <button className="mt-3 w-full rounded bg-primary p-2 font-semibold text-white">
+        <button
+          onClick={onBookStay}
+          className="mt-3 w-full rounded bg-primary p-2 font-semibold text-white"
+        >
           Book this offer
         </button>
       </div>
-    </a>
+    </div>
   </li>
 )
 
