@@ -8,7 +8,7 @@ import userImg from '../../assets/eu.jpg'
 
 const LINKS = [
   { label: 'Stays', to: '/' },
-  { label: 'My Bookings', to: '/' }
+  { label: 'My Bookings', to: '/my-bookings' }
 ]
 
 const Header = () => {
