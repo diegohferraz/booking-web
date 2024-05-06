@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Cozy house",
+    "address": "Street 1, Brotas",
+    "image": "derick-mckinney-veyLBev-c4c-unsplash.jpg",
+    "price": 200.00
+  },
+  {
+    "id": 2,
+    "name": "Stay close to the beach",
+    "address": "Street 21, Ubatuba",
+    "image": "durian-bullet-JCMQo028t3Q-unsplash.jpg",
+    "price": 320.00
+  },
+  {
+    "id": 3,
+    "name": "Beautiful penthouse",
+    "address": "Street 3, São Paulo",
+    "image": "infinite-views-79NjpXDOJU8-unsplash.jpg",
+    "price": 299.99
+  },
+  {
+    "id": 4,
+    "name": "Calm house at the mountains",
+    "address": "Street 1, Serra Negra",
+    "image": "juan-burgos-_m3nD5aQIDo-unsplash.jpg",
+    "price": 270.00
+  },
+  {
+    "id": 5,
+    "name": "Modern Apartment",
+    "address": "Street 5, Barueri",
+    "image": "lotus-design-n-print-jt2I98bh53A-unsplash.jpg",
+    "price": 200.00
+  },
+  {
+    "id": 6,
+    "name": "Best pool in town",
+    "address": "Street 32, Curitiba",
+    "image": "marvin-meyer-cjhuXRtRT0Y-unsplash.jpg",
+    "price": 200.00
+  },
+  {
+    "id": 7,
+    "name": "iImpressive view",
+    "address": "Street 24, Ilhabela",
+    "image": "roberto-nickson-YG2MysGbT_M-unsplash.jpg",
+    "price": 350.00
+  },
+  {
+    "id": 8,
+    "name": "Classic house",
+    "address": "Street 65, Ouro Preto",
+    "image": "tessa-edmiston-MTSILZYVcdw-unsplash.jpg",
+    "price": 200.00
+  },
+  {
+    "id": 9,
+    "name": "Cabin in the woods",
+    "address": "Street 20, Monte Verde",
+    "image": "tim-arnold-st6A3w5Sj3Y-unsplash.jpg",
+    "price": 200.00
+  }
+]

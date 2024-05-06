@@ -8,7 +8,7 @@ type HeaderLinkProps = {
 
 const HeaderLink = ({ label, to }: HeaderLinkProps) => {
   const location = useLocation()
-  console.log(location.pathname, to, location.pathname === to)
+
   return (
     <Link
       className={twMerge(

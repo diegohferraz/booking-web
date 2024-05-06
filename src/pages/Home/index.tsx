@@ -1,6 +1,8 @@
 import Hero from '../../components/Hero'
 import StaysList from '../../components/StaysList'
 
+import staysData from '../../mock/properties.json'
+
 const Home = () => (
   <>
     <Hero />
@@ -8,7 +10,7 @@ const Home = () => (
       <h2 className="mb-8 text-5xl font-medium text-secondary max-sm:text-4xl">
         Stays near you
       </h2>
-      <StaysList />
+      <StaysList stays={staysData} />
     </main>
   </>
 )
