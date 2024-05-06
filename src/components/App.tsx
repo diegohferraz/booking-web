@@ -1,4 +1,7 @@
 import { BrowserRouter } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css'
 
 import Footer from './Footer'
 import Header from './Header'
@@ -16,6 +19,7 @@ function App() {
           <Footer />
         </div>
       </BrowserRouter>
+      <ToastContainer position="top-center" />
     </BookingContextProvider>
   )
 }

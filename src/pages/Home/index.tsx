@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { isBefore } from 'date-fns'
+import { areIntervalsOverlapping, isBefore } from 'date-fns'
 
 import Modal from '@/components/Modal'
 import Hero from '@/components/Hero'
@@ -10,6 +10,7 @@ import staysData from '@/mock/properties.json'
 
 import useModal from '@/hooks/useModal'
 import BookingContext from '@/context/BookingContext'
+import { toast } from 'react-toastify'
 
 const Home = () => {
   const { isShowing, toggle } = useModal()
@@ -29,6 +30,19 @@ const Home = () => {
   const handleConfirmBooking = () => {
     if (!currentBookingStayId) return
 
+    const hasOverlap = bookings.some((booking) => {
+      return areIntervalsOverlapping(
+        { start: booking.dateFrom, end: booking.dateTo },
+        { start: dateFrom, end: dateTo },
+        { inclusive: true }
+      )
+    })
+
+    if (hasOverlap) {
+      toast.error('You already have an booking for this date.')
+      return
+    }
+
     setBookings([
       ...bookings,
       {
@@ -42,6 +56,8 @@ const Home = () => {
     setDateFrom(new Date())
     setDateTo(new Date())
     toggle()
+
+    toast.success('Successfully booked!')
   }
 
   return (

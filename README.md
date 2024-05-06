@@ -14,6 +14,7 @@ This project uses the folowing tech stack:
 - [Tailwindcss](https://tailwindcss.com) - To build the interface design.
 - [Eslint](https://eslint.org) - To ensure code quality and standard
 - [Shadcn](https://ui.shadcn.com/) - To use stable and well tested ui components.
+- [Date FNS](https://date-fns.org/) - To handle some common date functions.
 
 ## Installation
 
