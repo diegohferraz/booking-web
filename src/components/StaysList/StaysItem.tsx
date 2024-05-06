@@ -4,6 +4,7 @@ type StaysItemProps = {
   image: string
   price: number
 }
+
 const StaysItem = ({ name, address, image, price }: StaysItemProps) => (
   <li>
     <a href="/" className="group">
