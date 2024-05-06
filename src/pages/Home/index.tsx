@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { areIntervalsOverlapping, isBefore } from 'date-fns'
+import { addDays, areIntervalsOverlapping, isBefore } from 'date-fns'
 
 import Modal from '@/components/Modal'
 import Hero from '@/components/Hero'
@@ -20,7 +20,7 @@ const Home = () => {
     number | null
   >(null)
   const [dateFrom, setDateFrom] = useState<Date>(new Date())
-  const [dateTo, setDateTo] = useState<Date>(new Date())
+  const [dateTo, setDateTo] = useState<Date>(addDays(new Date(), 1))
 
   const handleBookStay = (stayId: number) => {
     setCurrentBookingStayId(stayId)
@@ -46,6 +46,7 @@ const Home = () => {
     setBookings([
       ...bookings,
       {
+        bookingId: new Date().getTime(),
         stayId: currentBookingStayId,
         dateFrom: dateFrom,
         dateTo: dateTo
@@ -54,7 +55,7 @@ const Home = () => {
 
     setCurrentBookingStayId(null)
     setDateFrom(new Date())
-    setDateTo(new Date())
+    setDateTo(addDays(new Date(), 1))
     toggle()
 
     toast.success('Successfully booked!')
@@ -82,7 +83,7 @@ const Home = () => {
           <DatePicker date={dateFrom} onDateChange={setDateFrom} />
           <DatePicker
             date={dateTo}
-            minDate={dateFrom}
+            minDate={addDays(dateFrom, 1)}
             onDateChange={setDateTo}
           />
         </div>

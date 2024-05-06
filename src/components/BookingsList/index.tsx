@@ -6,9 +6,15 @@ import staysData from '../../mock/properties.json'
 
 type BookingsListProps = {
   bookings: Booking[]
+  onCancelBooking: (bookingId: number) => void
+  onEditBooking: (bookingId: number) => void
 }
 
-const BookingsList = ({ bookings }: BookingsListProps) => {
+const BookingsList = ({
+  bookings,
+  onCancelBooking,
+  onEditBooking
+}: BookingsListProps) => {
   const bookingWithStayData = bookings.map((booking) => {
     const stayData = staysData.find((stay) => stay.id === booking.stayId)
 
@@ -23,12 +29,15 @@ const BookingsList = ({ bookings }: BookingsListProps) => {
     <ul>
       {bookingWithStayData.map((stay) => (
         <BookingsListItem
-          key={stay!.id}
+          key={stay.bookingId}
+          id={stay.bookingId}
           name={stay.name!}
           address={stay.address!}
           image={stay.image!}
           dateFrom={stay.dateFrom}
           dateTo={stay.dateTo}
+          onCancelBooking={onCancelBooking}
+          onEditBooking={onEditBooking}
         />
       ))}
     </ul>
