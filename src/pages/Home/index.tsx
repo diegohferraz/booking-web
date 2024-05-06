@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { isBefore } from 'date-fns'
 
 import Modal from '@/components/Modal'
@@ -9,16 +9,38 @@ import DatePicker from '@/components/DatePicker'
 import staysData from '@/mock/properties.json'
 
 import useModal from '@/hooks/useModal'
+import BookingContext from '@/context/BookingContext'
 
 const Home = () => {
   const { isShowing, toggle } = useModal()
+  const { bookings, setBookings } = useContext(BookingContext)
 
-  const [currentBookingStayId, setCurrentBookingStayId] = useState<number>()
+  const [currentBookingStayId, setCurrentBookingStayId] = useState<
+    number | null
+  >(null)
   const [dateFrom, setDateFrom] = useState<Date>(new Date())
   const [dateTo, setDateTo] = useState<Date>(new Date())
 
   const handleBookStay = (stayId: number) => {
     setCurrentBookingStayId(stayId)
+    toggle()
+  }
+
+  const handleConfirmBooking = () => {
+    if (!currentBookingStayId) return
+
+    setBookings([
+      ...bookings,
+      {
+        stayId: currentBookingStayId,
+        dateFrom: dateFrom,
+        dateTo: dateTo
+      }
+    ])
+
+    setCurrentBookingStayId(null)
+    setDateFrom(new Date())
+    setDateTo(new Date())
     toggle()
   }
 
@@ -54,7 +76,7 @@ const Home = () => {
           </p>
         )}
         <button
-          onClick={() => {}}
+          onClick={handleConfirmBooking}
           disabled={isBefore(dateTo, dateFrom)}
           className="mt-3 w-full rounded bg-primary p-2 font-semibold text-white disabled:bg-neutral-500"
         >
